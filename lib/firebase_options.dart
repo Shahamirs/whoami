@@ -4,21 +4,19 @@ import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
 
-/// Default [FirebaseOptions] for use with your Firebase apps.
-///
-/// Example:
-/// ```dart
-/// import 'firebase_options.dart';
-/// // ...
-/// await Firebase.initializeApp(
-///   options: DefaultFirebaseOptions.currentPlatform,
-/// );
-/// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
-    throw UnsupportedError(
-      'DefaultFirebaseOptions have not been configured for this project! '
-      'Please run `flutterfire configure` from the terminal.',
+    // For now we will just run the web config as the default since the user provided a web config
+    // and is testing via web/chrome.
+    return const FirebaseOptions(
+      apiKey: 'AIzaSyAqsQWc2PcYKuMQGSU1SzWxkavnGPd0Gw4',
+      appId: '1:470806767324:web:4b7898b02c6185c257f619',
+      messagingSenderId: '470806767324',
+      projectId: 'whoami-5dcaa',
+      authDomain: 'whoami-5dcaa.firebaseapp.com',
+      databaseURL: 'https://whoami-5dcaa-default-rtdb.europe-west1.firebasedatabase.app',
+      storageBucket: 'whoami-5dcaa.firebasestorage.app',
+      measurementId: 'G-M6F7M5MNT0',
     );
   }
 }

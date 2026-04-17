@@ -3,6 +3,7 @@ import '../../domain/repositories/auth_repository.dart';
 import '../../domain/repositories/game_repository.dart';
 import '../../data/repositories/mock_auth_repository.dart';
 import '../../data/repositories/mock_game_repository.dart';
+import '../../data/repositories/firebase_game_repository.dart';
 import '../../domain/models/models.dart';
 
 final authRepositoryProvider = Provider<IAuthRepository>((ref) {
@@ -10,7 +11,7 @@ final authRepositoryProvider = Provider<IAuthRepository>((ref) {
 });
 
 final gameRepositoryProvider = Provider<IGameRepository>((ref) {
-  return MockGameRepository();
+  return FirebaseGameRepository();
 });
 
 class AuthNotifier extends Notifier<Player?> {
